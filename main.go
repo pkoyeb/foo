@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"time"
 )
 
 func main() {
@@ -15,6 +16,7 @@ func main() {
 			res, err := http.Get(url)
 			if err != nil {
 				fmt.Println(fmt.Sprint("Unnable to reach admin port : %s", err.Error()))
+				time.Sleep(time.Second)
 				continue
 			}
 
